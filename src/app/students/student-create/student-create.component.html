@@ -1,28 +1,39 @@
 <h1>Create New Student</h1>
-<div class="container">
+<form class="form" [formGroup]="form" (submit)="createStudentHandler()">
+  <div>
+    <mat-form-field float-label="float" appearance="standard">
+      <mat-label>Email</mat-label>
+      <input type="email" formControlName="email" matInput placeholder="Student email" />
+    </mat-form-field>
+  </div>
   <div>
     <mat-form-field float-label="float" appearance="standard">
       <mat-label>Name</mat-label>
-      <input type="text" matInput required placeholder="Student name" />
+      <input type="text" formControlName="name" matInput placeholder="Student name" />
       <!--<mat-hint>Enter name</mat-hint>-->
     </mat-form-field>
   </div>
   <div>
     <mat-form-field float-label="float" hideRequiredMarker appearance="standard">
       <mat-label>Last Name</mat-label>
-      <input type="text" matInput placeholder="Student last name" />
+      <input type="text" matInput formControlName="lastName" placeholder="Student last name" />
     </mat-form-field>
   </div>
   <div>
     <mat-form-field float-label="float" appearance="standard">
       <mat-label>Age</mat-label>
-      <input type="number" required matInput placeholder="Student age" />
+      <input type="number" formControlName="age" matInput placeholder="Student age" />
     </mat-form-field>
   </div>
   <div>
     <mat-form-field float-label="float" appearance="standard">
       <mat-label>BirthDate</mat-label>
-      <input type="date" required matInput placeholder="Student birthdate" />
+      <input type="date" formControlName="birthdate" matInput placeholder="Student birthdate" />
     </mat-form-field>
   </div>
-</div>
+  <div class="form-actions">
+    <button class="form-actions-save" mat-raised-button color="primary" type="submit"> Save </button>
+    <button class="form-actions-reset" mat-button type="reset"> Reset </button>
+  </div>
+</form>
+

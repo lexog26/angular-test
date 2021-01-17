@@ -1,0 +1,15 @@
+.form-actions {
+  display: flex;
+  //justify-content: space-between;
+  align-items: center;
+
+  &-save {
+    margin-right: 10px;
+  }
+
+  &-reset {
+    font-size: 12px;
+    //font-weight: $fw-lighter;
+    //color: $blue;
+  }
+}

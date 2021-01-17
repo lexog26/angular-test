@@ -9,6 +9,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatTableModule } from '@angular/material/table';
 import { MatInputModule } from '@angular/material/input';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { StudentService } from '../services/students/student.service';
 
@@ -20,7 +21,8 @@ import { StudentService } from '../services/students/student.service';
     MatCardModule,
     MatFormFieldModule,
     MatTableModule,
-    MatInputModule
+    MatInputModule,
+    ReactiveFormsModule
   ],
   declarations: [StudentDetailsComponent, StudentCreateComponent],
   providers: [StudentService],

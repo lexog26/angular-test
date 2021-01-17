@@ -3,10 +3,14 @@ export class Student {
   name: string;
   lastName: string;
   age: number;
-  constructor(id: number, name: string, lastName: string, age: number){
-    this.id = id;
-    this.name = name;
-    this.lastName = lastName;
-    this.age = age;
+  email: string;
+  birthdate: Date;
+  constructor(/*id: number, name: string, lastName: string, age: number*/){
+    this.id = 0;
+    this.name = '';
+    this.lastName = '';
+    this.age = 0;
+    this.email = '';
+    this.birthdate = new Date();
   }
 }

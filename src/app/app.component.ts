@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { SideNavComponent } from './shared/side-nav/side-nav.component';
+import { Component, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'students-spa';
+  @ViewChild('sidenav') sidenav: any;
+
+  toggleSidenav(evt: boolean): void {
+    evt ? this.sidenav.open() : this.sidenav.close();
+  }
 }

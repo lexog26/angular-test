@@ -1,29 +1,39 @@
-<h1>Student details</h1>
-<div class="container">
-  <div>
-    <mat-form-field float-label="float" appearance="standard">
-      <mat-label>Name</mat-label>
-      <label>Student Name</label>
-    </mat-form-field>
-  </div>
-  <div>
-    <mat-form-field float-label="float" hideRequiredMarker appearance="standard">
-      <mat-label>Last Name</mat-label>
-      <label>Last Name</label>
-    </mat-form-field>
-  </div>
-  <div>
-    <mat-form-field float-label="float" appearance="standard">
-      <mat-label>Age</mat-label>
-      <label>Age</label>
-    </mat-form-field>
-  </div>
-  <div>
-    <mat-form-field float-label="float" appearance="standard">
-      <mat-label>BirthDate</mat-label>
-      <label>BirthDate</label>
-    </mat-form-field>
-  </div>
-</div>
-
-
+<mat-card>
+  <mat-card-header>
+    Student {{student.name}} details
+  </mat-card-header>
+  <mat-card-content>
+    <div>
+      <div>
+        <mat-form-field appearance="standard">
+          <mat-label>Email</mat-label>
+          <input type="email" value={{student.email}} readonly matInput />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="standard">
+          <mat-label>Name</mat-label>
+          <input type="text" readonly matInput value={{student.name}} />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="standard">
+          <mat-label>Last Name</mat-label>
+          <input type="text" readonly matInput value={{student.lastName}} />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="standard">
+          <mat-label>Age</mat-label>
+          <input type="number" readonly matInput value={{student.age}} />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="standard">
+          <mat-label>BirthDate</mat-label>
+          <input type="text" readonly matInput value="{{student.birthdate | date:'dd/MM/yy'}}" />
+        </mat-form-field>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

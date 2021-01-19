@@ -37,7 +37,8 @@ export class StudentService {
   }
 
   getById(id: number): Student {
-    return this.students[id];
+    // return this.students[id];
+    return this.students.find(std => std.id === id) as Student;
   }
 
   createStudent(student: Student): Student {

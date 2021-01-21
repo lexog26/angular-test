@@ -1,4 +1,5 @@
-import { StudentService } from './../../services/students/student.service';
+import { Student } from './../../core/models/student';
+import { StudentService } from './../../core/services/students/student.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
@@ -9,11 +10,12 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class StudentDetailsComponent implements OnInit {
 
-  student: any;
+  student: Student;
   studentService: StudentService;
 
   constructor(private activeRoute: ActivatedRoute, studentService: StudentService) {
     this.studentService = studentService;
+    this.student = new Student();
    }
 
   ngOnInit(): void {
@@ -24,7 +26,7 @@ export class StudentDetailsComponent implements OnInit {
 
     this.activeRoute.params.subscribe ( r =>
       {
-        this.student = this.studentService.getById(Number(r.id));
+        this.studentService.getById(Number(r.id)).subscribe(studentObs => this.student = studentObs);
       });
 
     // Find the student based on id url param

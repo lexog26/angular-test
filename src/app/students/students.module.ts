@@ -14,10 +14,8 @@ import { MatTableModule } from '@angular/material/table';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 
-import { StudentService } from '../services/students/student.service';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { StudentService } from '../core/services/students/student.service';
 import { StudentsTableComponent } from './students-table/students-table.component';
-// import { AuthInterceptor } from './../core/interceptors/auth-interceptor';
 
 @NgModule({
   imports: [
@@ -30,13 +28,16 @@ import { StudentsTableComponent } from './students-table/students-table.componen
     MatTableModule,
     MatInputModule,
     MatListModule,
-    ReactiveFormsModule,
-  //  AuthInterceptor
+    ReactiveFormsModule
   ],
-  declarations: [StudentDetailsComponent, StudentCreateComponent, StudentListComponent, StudentsTableComponent],
+  declarations: [
+    StudentDetailsComponent,
+    StudentCreateComponent,
+    StudentListComponent,
+    StudentsTableComponent
+  ],
   providers: [
-    StudentService,
-    // {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}
+    StudentService
   ],
   exports: [StudentCreateComponent, StudentDetailsComponent]
 })

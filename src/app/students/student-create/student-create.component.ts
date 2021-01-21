@@ -1,6 +1,6 @@
-import { Student } from './../../models/student';
+import { Student } from './../../core/models/student';
 import { Component, OnInit } from '@angular/core';
-import { StudentService } from '../../services/students/student.service';
+import { StudentService } from '../../core/services/students/student.service';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -33,13 +33,10 @@ export class StudentCreateComponent implements OnInit {
   }
 
   createStudentHandler(): void{
-    console.log('create student handler called');
     if (this.form.valid) {
-      console.log('create form valid');
       this.student = this.form.value as Student;
       console.log(this.student);
       this.studentService.createStudent(this.student);
-      console.log(this.studentService.getAll());
     }
   }
 

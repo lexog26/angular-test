@@ -1,5 +1,5 @@
-import { Student } from './../../models/student';
-import { StudentService } from './../../services/students/student.service';
+import { Student } from './../../core/models/student';
+import { StudentService } from './../../core/services/students/student.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -17,7 +17,7 @@ export class StudentListComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.students = this.studentService.getAll();
+    this.studentService.getAll().subscribe(data => this.students = data);
   }
 
 }
